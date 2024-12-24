@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full h-screen relative justify-center items-center bg-gradient-to-b from-veryDarkBlue to-darkPurple">
+    <div className="flex flex-col w-full h-screen relative justify-center items-center bg-gradient-to-b from-veryDarkBlue to-darkPurple overflow-hidden">
       {/* Bg buttom */}
       <div className="flex w-full h-48 absolute bottom-0 z-20 items-end justify-center">
         <Image
@@ -32,7 +32,7 @@ export default function Home() {
       {/* Content */}
       <div className="flex flex-col w-full h-full items-center justify-center p-8 z-30">
         <div className="flex flex-col h-full">
-          <h1 className="text-white text-[24px] tracking-[0.3em] my-28 text-center">
+          <h1 className="text-white text-[16px] md:text-[20px] lg:text-[24px] tracking-[0.3em] my-28 text-center">
             WE&apos;RE LAUNCHING SOON
           </h1>
           <Counterdown targetDate={"2024-12-25T00:00:00"} /> {/* Time format */}

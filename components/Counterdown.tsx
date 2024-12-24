@@ -81,7 +81,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
   }
 
   return (
-    <div className="flex space-x-8">
+    <div className="flex space-x-8 scale-[0.45] md:scale-75 lg:scale-100">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div key={unit} className="flex flex-col items-center">
           <div className="flex flex-col items-center rounded-lg p-8 w-40 relative">
