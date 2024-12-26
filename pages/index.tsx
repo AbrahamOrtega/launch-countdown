@@ -3,8 +3,26 @@ import Image from "next/image";
 import { IoLogoFacebook } from "react-icons/io";
 import { FaPinterest, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
+  const getFutureDate = () => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + 1);
+    currentDate.setHours(currentDate.getHours() + 5);
+
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    const hours = String(currentDate.getHours()).padStart(2, "0");
+    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  };
+
+  useEffect(() => {}, []);
+
   return (
     <div className="flex flex-col w-full h-screen relative justify-center items-center bg-gradient-to-b from-veryDarkBlue to-darkPurple overflow-hidden">
       {/* Bg buttom */}
@@ -35,7 +53,7 @@ export default function Home() {
           <h1 className="text-white text-[16px] md:text-[20px] lg:text-[24px] tracking-[0.3em] my-28 text-center">
             WE&apos;RE LAUNCHING SOON
           </h1>
-          <Counterdown targetDate={"2024-12-25T00:00:00"} /> {/* Time format */}
+          <Counterdown targetDate={getFutureDate()} /> {/* Time format */}
         </div>
 
         {/* Social media */}
